@@ -4,9 +4,9 @@ let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
 
 // Declare the players score variables
-    // Create two variables in global scope, initiliaze to 0:
-        // humanScore
-        // computerScore 
+// Create two variables in global scope, initiliaze to 0:
+// humanScore
+// computerScore 
 
 let humanScore = 0;
 let computerScore = 0;
@@ -14,7 +14,7 @@ let computerScore = 0;
 playRound(humanChoice, computerChoice);
 
 // Get Computer Choice
-    // Create a new function named getComputerChoice, that randomly returns "rock", "paper", "scissors"
+// Create a new function named getComputerChoice, that randomly returns "rock", "paper", "scissors"
 function getComputerChoice() {
     let randomNumber = Math.random();
     let computerChoice;
@@ -27,10 +27,10 @@ function getComputerChoice() {
     }
     return computerChoice;
 }
-        
+
 
 // Get Human Choice
-    // Create function getHumanChoice
+// Create function getHumanChoice
 function getHumanChoice() {
     // prompt user
     // validate prompt is "rock", "paper", "scissors"
@@ -38,16 +38,16 @@ function getHumanChoice() {
 
     while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
         humanChoice = prompt('Enter "rock", "paper" or "scissors": ').toLowerCase().trim();
-    } 
+    }
     return humanChoice;
     // test
     // console.log("humanChoice is: " + humanChoice);        
 }
 
 // Write the logic to play a single round
-    // Create a function playRound(humanChoice, computerChoice)
-    // Console.log round winner
-    // increment humanScore or computerScore
+// Create a function playRound(humanChoice, computerChoice)
+// Console.log round winner
+// increment humanScore or computerScore
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
@@ -73,12 +73,12 @@ function playRound(humanChoice, computerChoice) {
         if (computerChoice === "rock") {
             console.log("Computer wins! Rock beat scissors");
             computerScore++;
+        } else if (computerChoice === "paper") {
+            console.log("You win! Scissors beat paper");
+            humanScore++;
+        } else if (computerChoice === "scissors") {
+            console.log("Draw");
         }
-    } else if (computerChoice === "paper") {
-        console.log("You win! Scissors beat paper");
-        humanScore++;
-    } else if (computerChoice ==="scissors") {
-        console.log("Draw");
     } else {
         console.log("Error");
     }
@@ -86,6 +86,6 @@ function playRound(humanChoice, computerChoice) {
 
 
 // Write the logic to play the entire game
-    // Create function playGame
-    // Move playRound function and score variables so that they're declared inside of the new playGame function
-    // Play 5 rounds by calliung playRound 5 times
+// Create function playGame
+// Move playRound function and score variables so that they're declared inside of the new playGame function
+// Play 5 rounds by calliung playRound 5 times
