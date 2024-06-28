@@ -1,15 +1,11 @@
-// Main execution
-
 // Declare the players score variables
 // Create two variables in global scope, initiliaze to 0:
 // humanScore
 // computerScore 
 
-let humanScore = 0;
-let computerScore = 0;
+// Main execution
 
 playGame();
-declareWinner(humanScore, computerScore);
 
 // Get Computer Choice
 // Create a new function named getComputerChoice, that randomly returns "rock", "paper", "scissors"
@@ -46,44 +42,7 @@ function getHumanChoice() {
 // Create a function playRound(humanChoice, computerChoice)
 // Console.log round winner
 // increment humanScore or computerScore
-function playRound(humanChoice, computerChoice) {
-    // human choice is "rock"
-    if (humanChoice === "rock") {
-        if (computerChoice === "rock") {
-            console.log("Draw");
-        } else if (computerChoice === "paper") {
-            console.log("Computer wins! Paper beats rock");
-            computerScore++;
-        } else if (computerChoice === "scissors") {
-            console.log("You win! Rock beats scissors.");
-            humanScore++;
-        }
-    // human choice is "paper"
-    } else if (humanChoice === "paper") {
-        if (computerChoice === "rock") {
-            console.log("You win! Paper beats rock");
-            humanScore++;
-        } else if (computerChoice === "paper") {
-            console.log("Draw");
-        } else if (computerChoice === "scissors") {
-            console.log("Computer wins! Scissors beat paper")
-            computerScore++;
-        }
-    // human choice is "scissors"
-    } else if (humanChoice === "scissors") {
-        if (computerChoice === "rock") {
-            console.log("Computer wins! Rock beats scissors");
-            computerScore++;
-        } else if (computerChoice === "paper") {
-            console.log("You win! Scissors beat paper");
-            humanScore++;
-        } else if (computerChoice === "scissors") {
-            console.log("Draw");
-        }
-    } else {
-        console.log("Error");
-    }
-}
+
 
 
 // Write the logic to play the entire game
@@ -91,16 +50,65 @@ function playRound(humanChoice, computerChoice) {
 // Move playRound function and score variables so that they're declared inside of the new playGame function
 // Play 5 rounds by calling playRound 5 times
 function playGame() {
+    // rounds var
     let rounds = 0;
+
+    // computerChoice and humanChoice var
     let computerChoice, humanChoice;
+
+    // scores variables
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice) {
+        // human choice is "rock"
+        if (humanChoice === "rock") {
+            if (computerChoice === "rock") {
+                console.log("Draw");
+            } else if (computerChoice === "paper") {
+                console.log("Computer wins! Paper beats rock");
+                computerScore++;
+            } else if (computerChoice === "scissors") {
+                console.log("You win! Rock beats scissors.");
+                humanScore++;
+            }
+        // human choice is "paper"
+        } else if (humanChoice === "paper") {
+            if (computerChoice === "rock") {
+                console.log("You win! Paper beats rock");
+                humanScore++;
+            } else if (computerChoice === "paper") {
+                console.log("Draw");
+            } else if (computerChoice === "scissors") {
+                console.log("Computer wins! Scissors beat paper")
+                computerScore++;
+            }
+        // human choice is "scissors"
+        } else if (humanChoice === "scissors") {
+            if (computerChoice === "rock") {
+                console.log("Computer wins! Rock beats scissors");
+                computerScore++;
+            } else if (computerChoice === "paper") {
+                console.log("You win! Scissors beat paper");
+                humanScore++;
+            } else if (computerChoice === "scissors") {
+                console.log("Draw");
+            }
+        } else {
+            console.log("Error");
+        }
+    }
+
     while (rounds < 5) {
         computerChoice = getComputerChoice();
         humanChoice = getHumanChoice();
         playRound(humanChoice, computerChoice);
         console.log(`Your Score: ${humanScore}`);
         console.log(`Computer Score: ${computerScore}`);
+        console.log("");
         rounds++;
     }
+    declareWinner(humanScore, computerScore);
     return rounds;
 }
 
