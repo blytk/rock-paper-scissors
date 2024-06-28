@@ -5,7 +5,7 @@
 
 // Main execution
 
-playGame();
+let numberOfRounds = playGame();
 
 // Get Computer Choice
 // Create a new function named getComputerChoice, that randomly returns "rock", "paper", "scissors"
